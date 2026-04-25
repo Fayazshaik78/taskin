@@ -1,0 +1,182 @@
+    .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Forces everything to the center horizontally */
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+    width: 100%;
+    }
+
+    .trusted-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers the avatar + text group */
+    gap: 12px;
+    margin-bottom: 30px;
+    }
+
+    .avatar-stack {
+    display: flex;
+    margin-right: 8px;
+    }
+
+    .avatar-stack img, .avatar-more {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-left: -12px; /* The overlap effect */
+    object-fit: cover;
+    }
+
+    .avatar-stack img:first-child {
+    margin-left: 0;
+    }
+
+    .avatar-more {
+    background: #e8f5e9;
+    color: #2e4d2c;
+    font-size: 0.7rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+    h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    }
+    .buttons {
+    display: flex;
+    justify-content: center; /* Centers buttons horizontally */
+    gap: 25px;               /* 👈 Increased space between buttons */
+    margin-top: 20px;        /* Space above the buttons */
+    margin-bottom: 50px;     /* Space below buttons before the phone starts */
+    }
+
+    /* Optional: Make the buttons look more like the reference */
+    .buttons button {
+    padding: 12px 28px;      /* More breathing room inside buttons */
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 30px;     /* Rounded pill shape */
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    /* Updated for tighter sentence spacing */
+    .trusted-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 5px; /* 👈 Reduced from 30px to close the gap to h1 */
+    }
+
+    h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 10px; /* 👈 Reduced from 20px to close the gap to the description */
+    line-height: 1.1;    /* Ensures lines within the H1 stay close */
+    }
+
+    .description {
+    margin-bottom: 20px; /* Space between text and the buttons */
+    max-width: 600px;    /* Optional: keeps text from getting too wide */
+    }
+
+    /* Updated for small button gap */
+    .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;           /* 👈 Small gap roughly equal to two spaces */
+    margin-top: 10px;
+    margin-bottom: 40px; 
+    }
+    .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 100vw; /* Strict limit to viewport width */
+    padding: 40px 20px;
+    overflow: hidden; /* Prevents children from leaking out */
+    }
+    /* 📱 MOBILE VIEW (Phones: 0px to 767px) */
+@media (max-width: 767px) {
+  .hero {
+    padding: 30px 15px; /* Tighter padding for small screens */
+  }
+
+  .trusted-wrapper {
+    flex-direction: column; /* Stack avatars above text if space is tight */
+    gap: 8px;
+  }
+
+  h1 {
+    font-size: 2.2rem; /* Significantly smaller for mobile */
+    line-height: 1.2;
+    margin-bottom: 15px;
+    padding: 0 10px;
+  }
+
+  .description {
+    font-size: 1rem;
+    padding: 0 15px;
+    line-height: 1.5;
+  }
+
+  .buttons {
+    flex-direction: column; /* Stack buttons vertically on mobile */
+    width: 100%;
+    max-width: 300px; /* Limits button width */
+    gap: 12px;
+    margin-bottom: 30px;
+  }
+
+  .buttons button {
+    width: 100%; /* Full width buttons for easier tapping */
+    padding: 14px;
+  }
+  
+  .avatar-stack img, .avatar-more {
+    width: 30px; /* Slightly smaller avatars */
+    height: 30px;
+  }
+}
+
+/* 📑 TABLET VIEW (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  .hero {
+    padding: 50px 30px;
+  }
+
+  .description {
+    max-width: 80%; /* Let text breathe more than on phone */
+  }
+
+  .buttons {
+    gap: 15px; /* Keep horizontal but slightly tighter than desktop */
+  }
+}
+
+/* 🖥️ DESKTOP ADJUSTMENT (Preventing Large Overflows) */
+@media (min-width: 1025px) {
+  .hero {
+    padding: 80px 20px; /* More vertical space on big screens */
+  }
+}

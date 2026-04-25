@@ -1,0 +1,108 @@
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+
+  /* 🌈 Brand Colors */
+  --primary-olive: #2e4d2c;
+  --bright-green: #66bb6a;
+  --soft-blue: #42a5f5;
+  --text-main: #1a1a1a;
+  --bg-vibrant: linear-gradient(-45deg, #f0f4ef, #e8f5e9, #ffffff, #d1e9ff);
+  
+  color-scheme: light;
+  color: var(--text-main);
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ✨ Moving Background Animation */
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--bg-vibrant);
+  background-size: 400% 400%;
+  animation: meshGradient 12s ease infinite;
+}
+
+@keyframes meshGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 🔗 Animated Links */
+a {
+  font-weight: 600;
+  color: var(--primary-olive);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+a:hover {
+  color: var(--bright-green);
+  transform: scale(1.05);
+}
+
+/* 🎯 Gradient Animated Heading */
+h1 {
+  font-size: 3.5em;
+  line-height: 1.1;
+  background: linear-gradient(90deg, #2e4d2c, #66bb6a, #42a5f5, #2e4d2c);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shineText 4s linear infinite;
+}
+
+@keyframes shineText {
+  to { background-position: 200% center; }
+}
+
+/* 🔘 Colorful Spring Buttons */
+button {
+  border-radius: 50px;
+  border: none;
+  padding: 0.8em 2em;
+  font-size: 1em;
+  font-weight: 600;
+  font-family: inherit;
+  background: linear-gradient(45deg, #2e4d2c, #66bb6a);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(46, 77, 44, 0.2);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy feel */
+}
+
+button:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(102, 187, 106, 0.4);
+  background: linear-gradient(45deg, #66bb6a, #42a5f5);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* 💫 Smooth Page Fade-In */
+#root {
+  animation: pageEnter 0.8s ease-out;
+}
+
+@keyframes pageEnter {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 📱 Responsive Adjustments */
+@media (max-width: 768px) {
+  h1 { font-size: 2.5em; }
+  body { place-items: flex-start; padding-top: 20px; }
+}
